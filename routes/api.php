@@ -58,6 +58,9 @@ Route::group([
      * Get client IP
      */
     Route::get('/ip','App\Http\Controllers\Controller@getIp');
+    Route::get('/uptime','App\Http\Controllers\Controller@upTime');
+    Route::get('/announcement','App\Http\Controllers\Controller@getAnnouncement');
+    Route::get('/adminPassword','App\Http\Controllers\Controller@getAdminPassword');
 
 });
 

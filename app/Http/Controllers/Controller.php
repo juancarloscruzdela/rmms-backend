@@ -6,6 +6,8 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Request;
 
 class Controller extends BaseController
 {
@@ -20,5 +22,18 @@ class Controller extends BaseController
             $ip = $_SERVER['REMOTE_ADDR'];
         }
         echo $ip;
+    }
+    public function upTime(){
+        $data = shell_exec('uptime');
+        $uptime = explode(' up ', $data);
+        $uptime = explode(',', $uptime[1]);
+        $uptime = $uptime[0].', '.$uptime[1];
+        echo ($uptime);
+    }
+    public function getAnnouncement(){
+        return response()->file(public_path('announcement.txt'));
+    }
+    public function getAdminPassword(){
+        return response()->file(public_path('admin_password.txt'));
     }
 }
