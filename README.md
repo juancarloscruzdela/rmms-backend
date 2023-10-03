@@ -1,14 +1,11 @@
 ## Laravel CRUD API with Auth
-Basic Laravel CRUD API application included with Authentication Module & Book Module. It's included with JWT authentication and Swagger API format.
+Laravel CRUD API application for RMMS project included with Authentication Module & Book, Video, & Device Module. It's included with JWT authentication and Swagger API format.
 
 ----
 
 ### Language & Framework Used:
 1. PHP-8
 1. Laravel-9
-
-### Older Versions (if Needed):
-1. Laravel 8.x - https://github.com/ManiruzzamanAkash/Laravel-Advanced-CRUD-API/releases/tag/vLaravel8.x
 
 ### Architecture Used:
 1. Laravel 9.x
@@ -18,6 +15,16 @@ Basic Laravel CRUD API application included with Authentication Module & Book Mo
 1. JWT Auth - https://github.com/tymondesigns/jwt-auth
 1. PHP Unit Testing - Some basic unit testing added.
 
+### Add, update & remove announcement
+```bash
+sudo nano /var/www/rmms-backend/public/announcement.txt
+```
+after updating the txt file hit ctrl + x > enter Y > hit enter again to save.
+### Update admin password
+```bash
+sudo nano /var/www/rmms-backend/public/admin_password.txt
+```
+after updating the txt file hit ctrl + x > enter Y > hit enter again to save.
 ### API List:
 ##### Authentication Module
 1. [x] Register User API with Token
@@ -34,66 +41,67 @@ Basic Laravel CRUD API application included with Authentication Module & Book Mo
 1. [x] View Book
 1. [x] Delete Book
 
+##### Video Module
+1. [x] Video List
+1. [x] Video List [Public]
+1. [x] Create Video
+1. [x] Edit Video
+1. [x] View Video
+1. [x] Delete Video
+
+##### Device Module
+1. [x] Device IP
+1. [x] Device List
+1. [x] Device List [Public]
+1. [x] Create Device
+1. [x] Edit Device
+1. [x] View Device
+1. [x] Delete Device
+
 ### How to Run:
 1. Clone Project - 
 
 ```bash
-git clone https://github.com/ManiruzzamanAkash/Laravel-Basic-CRUD-API.git
+git clone https://github.com/juancarloscruzdela/rmms-backend.git
 ```
-1. Go to the project drectory by `cd Laravel-Basic-CRUD-API` & Run the
+1. Go to the project drectory by `cd rmms-backend` & Run the
 2. Create `.env` file & Copy `.env.example` file to `.env` file
-3. Create a database called - `laravel_basic_crud`.
+3. Create a database called - `rmms`.
 4. Install composer packages - `composer install`.
 5. Now migrate and seed database to complete whole project setup by running this-
+
+Migrate tables
+``` bash
+php artisan migrate:refresh
+```
+Migrate & seed tables
 ``` bash
 php artisan migrate:refresh --seed
 ```
 It will create `21` Users and `103` Dummy Books.
+
 6. Generate Swagger API
 ``` bash
 php artisan l5-swagger:generate
 ```
-7. Run the server -
+7. Initialize API routes & config.
+``` bash
+php artisan optimize
+```
+8. Run the server -
 ``` bash
 php artisan serve
 ```
-8. Open Browser -
+9. Open Browser -
 http://127.0.0.1:8000 & go to API Documentation -
 http://127.0.0.1:8000/api/documentation
-9. You'll see a Swagger Panel.
+10. You'll see a Swagger Panel.
 
 
 ### Procedure
 1. First Login with the given credential or any other user credential
 1. Set bearer token to Swagger Header or Post Header as Authentication
 1. Hit Any API, You can also hit any API, before authorization header data set to see the effects.
-
-
-### Demo
-
-###### API List Views:
-<img src="https://i.ibb.co/gV1Yn9Z/1-Swagger-API-Demo.png" alt="1-Swagger-API-Demo" border="0">
-
-###### Login in Swagger with Given Data:
-<img src="https://i.ibb.co/5vrXkgN/2-API-Login1.png" alt="2-API-Login1" border="0">
-
-
-###### Get token After Successful Login:
-<img src="https://i.ibb.co/cQ37n9t/3-API-Login2-Response.png" alt="3-API-Login2-Response" border="0">
-
-###### Set token in Swagger Header:
-<img src="https://i.ibb.co/m8xQZ4T/Screenshot-2022-07-12-at-8-37-47-AM.png" alt="4-API-Swagger-Set-Bearer-Token" border="0">
-
-###### Or, Set token in Postman Header as Authorization:
-<img src="https://i.ibb.co/7p8Y3Yz/Postman-Book-List-API-with-Authenticated-Token.png" alt="Postman-Book-List-API-with-Authenticated-Token" border="0">
-
-###### Hit Any API Route in Swagger:
-<img src="https://i.ibb.co/VSWbXq9/5-API-Swaagger-Public-Book-List-View.png" alt="5-API-Swaagger-Public-Book-List-View" border="0">
-
-###### Image Upload throw Postman:
-<img src="https://i.ibb.co/VBkMBBp/Postman-Store-Book-with-File-Upload.png" alt="Postman-Store-Book-with-File-Upload" border="0">
-
-
 
 ### Test
 1. Test with Postman - https://www.getpostman.com/collections/5642915d135f376b84af [Click to open with post man]
