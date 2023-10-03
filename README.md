@@ -1,5 +1,5 @@
 ## Laravel CRUD API with Auth
-Laravel CRUD API application for RMMS project included with Authentication Module & Book, Video, & Device Module. It's included with JWT authentication and Swagger API format.
+Laravel CRUD API application for Digital Information Content Platform with Telecommunications Network-Assisted Remote Monitoring and Management project included with Authentication Module & Book, Video, & Device Module. It's included with JWT authentication and Swagger API format.
 
 ----
 
