@@ -21,7 +21,9 @@ class Controller extends BaseController
         } else {
             $ip = $_SERVER['REMOTE_ADDR'];
         }
-        echo $ip;
+        $name = gethostname();
+        $device_info = ["ip" => $ip, "name" => $name];
+        return response()->json($device_info);
     }
     public function upTime(){
         $data = shell_exec('uptime');
@@ -34,6 +36,6 @@ class Controller extends BaseController
         return response()->file(public_path('announcement.txt'));
     }
     public function getAdminPassword(){
-        return response()->file(public_path('admin_password.txt'));
+        return response()->withHeaders(['Content-Type' => 'text/plain',])->file(public_path('admin_password.txt'));
     }
 }

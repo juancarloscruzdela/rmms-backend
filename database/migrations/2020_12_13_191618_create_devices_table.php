@@ -15,6 +15,7 @@ class CreateDevicesTable extends Migration
     {
         Schema::create('devices', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 255);
             $table->string('ip', 255);
             $table->string('archived')->nullable();
             // $table->unsignedBigInteger('user_id')->comment('Created By User');

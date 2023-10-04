@@ -35,8 +35,8 @@ class DeviceRepository implements CrudInterface
     public function getAll(): Paginator
     {
         return $this->user->devices()
-            ->orderBy('id', 'desc')
-            ->paginate(10);
+            ->orderBy('updated_at', 'desc')
+            ->paginate(50);
     }
 
     /**
@@ -47,8 +47,8 @@ class DeviceRepository implements CrudInterface
      */
     public function getPaginatedData($perPage): Paginator
     {
-        $perPage = isset($perPage) ? intval($perPage) : 12;
-        return Device::orderBy('id', 'desc')
+        $perPage = isset($perPage) ? intval($perPage) : 50;
+        return Device::orderBy('updated_at', 'desc')
             ->paginate($perPage);
     }
 

@@ -16,6 +16,7 @@ class Device extends Model
      */
     protected $fillable = [
         'ip',
+        'name',
         'archived'
     ];
 
