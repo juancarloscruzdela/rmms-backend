@@ -36,7 +36,9 @@ class Controller extends BaseController
         return response()->file(public_path('announcement.txt'));
     }
     public function getAdminPassword(){
-        $pw = file_get_contents('admin_password.txt');
-        echo "".$pw;
+        $pw = file(public_path('admin_password.txt'));
+        return response()->json([
+            'password' => $pw
+        ]);
     }
 }
