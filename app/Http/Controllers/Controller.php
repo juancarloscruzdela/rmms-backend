@@ -36,6 +36,6 @@ class Controller extends BaseController
         return response()->file(public_path('announcement.txt'));
     }
     public function getAdminPassword(){
-        return response()->withHeaders(['Content-Type' => 'text/plain',])->file(public_path('admin_password.txt'));
+        return response()->withHeaders(['Content-Type' => 'text/plain'])->file(public_path('admin_password.txt'));
     }
 }
