@@ -21,7 +21,7 @@ class CreateDevicesTable extends Migration
             // $table->unsignedBigInteger('user_id')->comment('Created By User');
 
             // $table->foreign('user_id')->references('id')->on('users');
-            $table->timestamps();
+            $table->serializeDate();
         });
     }
 

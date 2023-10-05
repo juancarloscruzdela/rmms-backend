@@ -8,6 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class Controller extends BaseController
 {
@@ -41,4 +42,10 @@ class Controller extends BaseController
             'password' => $pw
         ]);
     }
+    
+    public function getTime(){
+        $timestamp = Carbon::now('Asia/Manila');
+        echo $timestamp;
+    }
+    
 }

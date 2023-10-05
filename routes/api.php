@@ -61,6 +61,7 @@ Route::group([
     Route::get('/uptime','App\Http\Controllers\Controller@upTime');
     Route::get('/announcement','App\Http\Controllers\Controller@getAnnouncement');
     Route::get('/adminPassword','App\Http\Controllers\Controller@getAdminPassword');
+    Route::get('/time','App\Http\Controllers\Controller@getTime');
 
 });
 
