@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Welcome\WelcomeController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,3 +14,4 @@ use App\Http\Controllers\Welcome\WelcomeController;
 */
 
 Route::get('/', [WelcomeController::class, 'welcome']);
+Route::get('/api/reports', [WelcomeController::class, 'reports']);

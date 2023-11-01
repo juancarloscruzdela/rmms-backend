@@ -14,6 +14,7 @@
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.2",
         "laravel/tinker": "^2.7",
+        "maatwebsite/excel": "^3.1",
         "tomfordrumm/jwt-auth": "dev-develop",
         "zircote/swagger-php": "^4.2"
     },

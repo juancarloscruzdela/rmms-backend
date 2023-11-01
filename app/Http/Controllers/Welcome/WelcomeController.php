@@ -11,4 +11,8 @@ class WelcomeController extends Controller
     {
         return view('welcome');
     }
+    public function reports(): Renderable
+    {
+        return view('reports');
+    }
 }

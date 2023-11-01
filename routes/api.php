@@ -4,6 +4,9 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Books\BooksController;
 use App\Http\Controllers\Videos\VideosController;
 use App\Http\Controllers\Devices\DevicesController;
+use App\Http\Controllers\ExportVideosExcelController;
+use App\Http\Controllers\ExportBooksExcelController;
+use App\Http\Controllers\ExportDevicesExcelController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -61,5 +64,14 @@ Route::group([], function ($router) {
     Route::get('/adminPassword','App\Http\Controllers\Controller@getAdminPassword');
     Route::get('/time','App\Http\Controllers\Controller@getTime');
 
+    /**
+     * Exports
+     */
+    Route::get('/export_excel/videos', [ExportVideosExcelController::class, 'index']);
+    Route::get('/export_excel/excel/videos', [ExportVideosExcelController::class, 'excel'])->name('export_excel_videos.excel');
+    Route::get('/export_excel/books', [ExportBooksExcelController::class, 'index']);
+    Route::get('/export_excel/excel/books', [ExportBooksExcelController::class, 'excel'])->name('export_excel_books.excel');
+    Route::get('/export_excel/devices', [ExportDevicesExcelController::class, 'index']);
+    Route::get('/export_excel/excel/devices', [ExportDevicesExcelController::class, 'excel'])->name('export_excel_devices.excel');
 });
 
