@@ -23,8 +23,8 @@
    <h3 align="center">Reports</h3><br />
    <div align="center">
     <a href="/api/export_excel/videos" class="btn btn-info">Videos</a>
-    <a href="/api/export_excel/videos" class="btn btn-info">Books</a>
-    <a href="/api/export_excel/videos" class="btn btn-info">Devices</a>
+    <a href="/api/export_excel/books" class="btn btn-info">Books</a>
+    <a href="/api/export_excel/devices" class="btn btn-info">Devices</a>
    </div>
    <br />
    
