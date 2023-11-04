@@ -70,7 +70,7 @@ class VideosController extends Controller
     public function indexAll(Request $request): JsonResponse
     {
         try {
-            $data = $this->videoRepository->getPaginatedData($request->perPage);
+            $data = $this->videoRepository->getPaginatedData(500);
             return $this->responseSuccess($data, 'Videos List Fetched Successfully !');
         } catch (\Exception $e) {
             return $this->responseError(null, $e->getMessage(), Response::HTTP_INTERNAL_SERVER_ERROR);
@@ -94,7 +94,7 @@ class VideosController extends Controller
     public function search(Request $request): JsonResponse
     {
         try {
-            $data = $this->videoRepository->searchVideos($request->search, $request->perPage);
+            $data = $this->videoRepository->searchVideos($request->search, 500);
             return $this->responseSuccess($data, 'Videos List Fetched Successfully !');
         } catch (\Exception $e) {
             return $this->responseError(null, $e->getMessage(), Response::HTTP_INTERNAL_SERVER_ERROR);

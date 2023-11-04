@@ -85,7 +85,7 @@ class BooksController extends Controller
     public function indexAll(Request $request): JsonResponse
     {
         try {
-            $data = $this->bookRepository->getPaginatedData($request->perPage);
+            $data = $this->bookRepository->getPaginatedData(500);
             return $this->responseSuccess($data, 'Books List Fetched Successfully !');
         } catch (\Exception $e) {
             return $this->responseError(null, $e->getMessage(), Response::HTTP_INTERNAL_SERVER_ERROR);
@@ -109,7 +109,7 @@ class BooksController extends Controller
     public function search(Request $request): JsonResponse
     {
         try {
-            $data = $this->bookRepository->searchBooks($request->search, $request->perPage);
+            $data = $this->bookRepository->searchBooks($request->search, 500);
             return $this->responseSuccess($data, 'Books List Fetched Successfully !');
         } catch (\Exception $e) {
             return $this->responseError(null, $e->getMessage(), Response::HTTP_INTERNAL_SERVER_ERROR);
