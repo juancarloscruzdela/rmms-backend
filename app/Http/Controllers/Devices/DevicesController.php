@@ -70,7 +70,7 @@ class DevicesController extends Controller
     public function indexAll(Request $request): JsonResponse
     {
         try {
-            $data = $this->deviceRepository->getPaginatedData(500);
+            $data = $this->deviceRepository->getPaginatedData(70);
             return $this->responseSuccess($data, 'Devices List Fetched Successfully !');
         } catch (\Exception $e) {
             return $this->responseError(null, $e->getMessage(), Response::HTTP_INTERNAL_SERVER_ERROR);
@@ -94,7 +94,7 @@ class DevicesController extends Controller
     public function search(Request $request): JsonResponse
     {
         try {
-            $data = $this->deviceRepository->searchDevice($request->search, 500);
+            $data = $this->deviceRepository->searchDevice($request->search, 70);
             return $this->responseSuccess($data, 'Devices List Fetched Successfully !');
         } catch (\Exception $e) {
             return $this->responseError(null, $e->getMessage(), Response::HTTP_INTERNAL_SERVER_ERROR);
